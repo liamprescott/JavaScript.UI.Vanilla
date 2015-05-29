@@ -1,0 +1,86 @@
+/*	--------------------------------------------------------------
+		  $ Natural box layout 
+		
+		  Apply to all elements [see: http://paulirish.com/2012/box-sizing-border-box-ftw/]
+		  --------------------------------------------------------------
+		  */
+*,
+:before,
+:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*
+ This is a test comment over more
+ than one line
+ */
+.js-acc {
+  border-top: 1px solid #999;
+}
+
+.js-acc__item {
+  border-bottom: 1px solid #999;
+}
+
+.js-acc__link,
+.js-acc__body {
+  font-family: sans-serif;
+}
+
+.js-acc__link {
+  text-transform: uppercase;
+  padding: 1em;
+  /*
+      opacity:0.5;
+      width: calc(100% - 2em);
+      display:flex;
+      */
+}
+
+.js-acc__link:hover {
+  animation-name: linkhover;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+
+/*
+     * This is another test comment over more
+     * than one line with slightly different format
+     */
+@keyframes linkhover
+{
+  0% {
+    background-color: #fff;
+    color: #000;
+  }
+  45% {
+    background-color: #ff00ff;
+    color: #fff;
+  }
+  55% {
+    background-color: #ff00ff;
+    color: #fff;
+  }
+  100% {
+    background-color: #fff;
+    color: #000;
+  }
+}
+
+.js-acc__body {
+  max-height: 0;
+  overflow: hidden;
+  padding-left: 1em;
+  padding-right: 1em;
+  transition-property: max-height;
+  transition-duration: 0.2s;
+}
+
+.acc__item--is-open > .js-acc__body {
+  padding-bottom: 1em;
+  max-height: 300px;
+}
+
+/*# sourceMappingURL=main.css.map */

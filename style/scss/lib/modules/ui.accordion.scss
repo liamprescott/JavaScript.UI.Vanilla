@@ -1,0 +1,97 @@
+
+/*
+ This is a test comment over more
+ than one line
+ */
+
+
+// Local Variables
+$border-color: #999;
+
+
+// Styles
+.js-acc
+{
+  border-top:1px solid $border-color;
+  }
+
+  .js-acc__item{
+    border-bottom:1px solid $border-color;
+  }
+
+    .js-acc__link,
+    .js-acc__body{
+      font-family: sans-serif;
+    }
+
+    .js-acc__link {
+
+      text-transform: uppercase;
+      padding:1em;
+
+      /*
+      opacity:0.5;
+      width: calc(100% - 2em);
+      display:flex;
+      */
+      &:hover {
+        animation: {
+          name:linkhover;
+          duration:2s;
+          timing-function:ease-in-out;
+        }
+      }
+    }
+
+
+
+    /*
+     * This is another test comment over more
+     * than one line with slightly different format
+     */
+
+    @keyframes linkhover
+    {
+      0% {
+        background-color:#fff;
+        color:#000;
+      }
+      45% {
+        background-color:#ff00ff;
+        color:#fff;
+      }
+      55% {
+        background-color:#ff00ff;
+        color:#fff;
+      }
+      100% {
+        background-color:#fff;
+        color:#000;
+      }
+    }
+
+    .js-acc__body {
+
+      max-height:0;
+      overflow:hidden;
+      padding:
+      {
+        left:1em;
+        right:1em;
+      }
+      transition:
+      {
+        property: max-height;
+        duration: 0.2s;
+        //timing-function: ease;
+      }
+    }
+
+
+    // Open close display logic
+    .acc__item--is-open > .js-acc__body
+    {
+      padding-bottom: 1em;
+
+      max-height:300px;
+    }
