@@ -1,35 +1,39 @@
 /*	--------------------------------------------------------------
-		  $ Natural box layout 
-		
+		  $ Natural box layout
+
 		  Apply to all elements [see: http://paulirish.com/2012/box-sizing-border-box-ftw/]
 		  --------------------------------------------------------------
 		  */
 *,
 :before,
 :after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/*
- This is a test comment over more
- than one line
- */
-.js-acc {
-  border-top: 1px solid #999;
-}
-
-.js-acc__item {
-  border-bottom: 1px solid #999;
-}
-
-.js-acc__link,
-.js-acc__body {
+body {
   font-family: sans-serif;
 }
 
-.js-acc__link {
+/**
+  --------------------------------------------------------------
+  $ UI Accordion
+  @description Basic styling for an example Accordion
+  --------------------------------------------------------------
+  */
+.acc {
+  border-top: 1px solid #999;
+}
+
+.acc__item {
+  border-bottom: 1px solid #999;
+}
+
+.acc__link,
+.acc__body {
+  font-family: sans-serif;
+}
+
+.acc__link {
   text-transform: uppercase;
   padding: 1em;
   /*
@@ -39,16 +43,38 @@
       */
 }
 
-.js-acc__link:hover {
-  animation-name: linkhover;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
+.acc__link:hover {
+  -webkit-animation-name: linkhover;
+          animation-name: linkhover;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
 }
 
 /*
      * This is another test comment over more
      * than one line with slightly different format
      */
+@-webkit-keyframes linkhover
+{
+  0% {
+    background-color: #fff;
+    color: #000;
+  }
+  45% {
+    background-color: #ff00ff;
+    color: #fff;
+  }
+  55% {
+    background-color: #ff00ff;
+    color: #fff;
+  }
+  100% {
+    background-color: #fff;
+    color: #000;
+  }
+}
 @keyframes linkhover
 {
   0% {
@@ -69,18 +95,75 @@
   }
 }
 
-.js-acc__body {
+.acc__body {
   max-height: 0;
   overflow: hidden;
   padding-left: 1em;
   padding-right: 1em;
-  transition-property: max-height;
-  transition-duration: 0.2s;
+  -webkit-transition-property: max-height;
+          transition-property: max-height;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 }
 
-.acc__item--is-open > .js-acc__body {
+.acc__item--is-open > .acc__body {
   padding-bottom: 1em;
   max-height: 300px;
 }
 
+/**
+  --------------------------------------------------------------
+  $ UI Modal
+  @description Basic styling for an example Modal window
+  --------------------------------------------------------------
+  */
+.modal-trigger {
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.modal-trigger:hover {
+  background-color: #ffff00;
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 100;
+}
+
+.modal.is-open {
+  display: block;
+}
+
+.modal__ko {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.modal__display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 300px;
+  padding: 20px;
+  margin-top: -150px;
+  margin-left: -200px;
+  background-color: #fff;
+  z-index: 2;
+}
+
+.modal__display__close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
 /*# sourceMappingURL=main.css.map */

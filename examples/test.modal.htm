@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta encoding="UTF-8">
+    <title>Example Modal Display</title>
+    <meta name="description" content="Example Modal Display">
+    <meta name="author" content="Liam Prescott">
+
+    <link rel="stylesheet" href="/style/css/main.css" />
+
+  </head>
+  <body>
+
+    <h1>Example Modal Display</h1>
+
+    <a class="modal-trigger" data-target-id="js-modal-target">Open modal window</a>
+
+    <div id="js-modal-target" class="modal js-example-modal">
+      <div class="js-modal__close modal__ko"></div>
+      <div class="modal__display">
+        <h1 class="modal__title">Title</h1>
+        <blockquote>
+          <p>Good design is making something intelligible and memorable. Great design is making something memorable and meaningful.</p>
+          <footer><cite>Dieter Rams</cite></footer>
+        </blockquote>
+        <a class="js-modal__close modal__display__close">Close</a>
+      </div>
+    </div>
+
+
+    <!--[if lte IE 8]>
+      <script src="/script/library/polyfills/polyfill.Array.prototype.forEach.js"></script>
+      <script src="/script/library/polyfills/polyfill.EventTarget.removeEventListener.js"></script>
+    <![endif]-->
+    <!--[if lte IE 9]>
+      <script src="/script/library/polyfills/polyfill.Element.classList.js"></script>
+    <![endif]-->
+    <script src="/script/library/util.events.vanilla.js"></script>
+    <script src="/script/library/ui.modal.vanilla.js"></script>
+  </body>
+</html>

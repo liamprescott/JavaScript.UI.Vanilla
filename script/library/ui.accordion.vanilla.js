@@ -11,7 +11,7 @@ if (!this.js) { this.js = {}; }
 
     namespace.accordion = function (data) {
       // Initialisation
-      function init () {
+      var init = function () {
         //Assign event handler
         var target = data.module,
             items = data.items = target.querySelectorAll(data.qsItem), // NodeList
@@ -31,14 +31,22 @@ if (!this.js) { this.js = {}; }
                 a,
                 b = itemLinks.length;
                 for (a=0; a<b; a++) {
-                  eventUtil.addClick(itemLinks[a], true, null, null, handleChangeState, [data, item, i]); //addClick (target, addClickListener, startHandler, startArguments, endHandler, endArguments)
+                eventUtil.addClick(
+                  {
+                    target: itemLinks[a],
+                    addClickListener: true,
+                    startHandler: null,
+                    startArguments: null,
+                    endHandler: handleChangeState,
+                    endArguments: [data, item, i]
+                  });
                 }
           })(i);
         }
 
         // Set initial state
         setInitialState(data);
-      }
+      };
 
 
       // Event Handlers
@@ -48,16 +56,16 @@ if (!this.js) { this.js = {}; }
        @param {HTMLElement} item - Accordion state / item that click relates to
        @param {Number} id - Accordion state / item Id
        */
-      function handleChangeState (e, data, item, id) {
+      var handleChangeState = function (e, data, item, id) {
         updateState(data, id, !item.classList.contains(data.cssClassItemVisible));
-      }
+      };
 
       /**
        @param {Object} data - Module data object
        @param {Number} id - Target accordion state / item Id
        @param {Boolean} show - Whether to show or hide the target state / item
        */
-      function updateState (data, id, show) {
+      var updateState = function (data, id, show) {
         // Validate Id
         if (id >= 0 && id < data.items.length) {
           // If configured to do so close all other states
@@ -67,7 +75,7 @@ if (!this.js) { this.js = {}; }
           setState(data, id, show);
         }
         else { return false; }
-      }
+      };
 
       /**
        @description - Set item state
@@ -75,11 +83,11 @@ if (!this.js) { this.js = {}; }
        @param {Integer} itemId - Item id
        @param {Boolean} show - whether to show or hide item
        */
-      function setState (data, itemId, show) {
+      var setState = function (data, itemId, show) {
         // Configure item and link
         displayItem(data.items[itemId], show, data.cssClassItemVisible);
         configureLinks(data.itemLinks[itemId], show, data.cssClassTriggerVisible);
-      }
+      };
 
 
       // Utility methods
@@ -87,7 +95,7 @@ if (!this.js) { this.js = {}; }
        @description - Set initial module state
        @param {Object} data - Module data
        */
-      function setInitialState(data)
+      var setInitialState = function (data)
       {
         // Look at data property on module
         // Look at property in data
@@ -97,7 +105,7 @@ if (!this.js) { this.js = {}; }
           var id = data.module.getAttribute(data.dpInitialStateId);
           if (id) { setState(data, id, true); }
         }
-      }
+      };
 
       /**
        @description - Show or hide a specific state
@@ -105,13 +113,13 @@ if (!this.js) { this.js = {}; }
        @param {Boolean} show - whether to show or hide item
        @param {String} cssClass - Class name that is added / removed based on state visibility
        */
-      function displayItem (item, show, cssClass) {
+      var displayItem = function (item, show, cssClass) {
         if (show) {
           item.classList.add(cssClass);
         } else {
           item.classList.remove(cssClass);
         }
-      }
+      };
 
       /**
        @description - Configure a collection of links
@@ -119,25 +127,29 @@ if (!this.js) { this.js = {}; }
        @param {Boolean} show - whether to show or hide item
        @param {String} cssClass - Class name that is added / removed based on state visibility
        */
-      function configureLinks (links, show, cssClass) {
+      var configureLinks = function (links, show, cssClass) {
         var i,
             l = links.length-1;
         for (i = l; i >= 0; i--) {
-          (show) ? links[i].classList.add(cssClass) : links[i].classList.remove(cssClass);
+          if (show) {
+            links[i].classList.add(cssClass);
+          } else {
+            links[i].classList.remove(cssClass);
+          }
         }
-      }
+      };
 
       /**
        @description - Close all items / states
        @param {Object} data - Module data object
        */
-      function closeAllItems (data) {
+      var closeAllItems = function (data) {
         var i,
             l = data.items.length-1;
         for (i = l; i >= 0; i--) {
           setState(data, i, false);
         }
-      }
+      };
 
       // Create return object
       var that = {};

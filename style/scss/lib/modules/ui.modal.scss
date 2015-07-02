@@ -1,0 +1,69 @@
+/**
+  --------------------------------------------------------------
+  $ UI Modal
+  @description Basic styling for an example Modal window
+  --------------------------------------------------------------
+  */
+
+ $overlay-colour : rgba(0,0,0,0.5);
+
+ // Styles
+
+ // Trigger links
+   .modal-trigger
+   {
+    font-size:20px;
+    text-decoration:underline;
+
+    &:hover{
+      background-color:#ffff00;
+    }
+   }
+
+// Modal window
+.modal {
+  position:fixed;
+  width:100%;
+  height:100%;
+  display:none;
+  z-index: 100;
+
+  &.is-open {
+    display:block;
+    }
+  }
+
+  .modal__ko {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: $overlay-colour;
+    z-index: 1;
+    }
+
+  .modal__display {
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:400px;
+    height:300px;
+    padding:20px;
+    margin-top: -150px;
+    margin-left:-200px;
+    background-color: #fff;
+    z-index: 2;
+    }
+
+    .modal__display__close {
+      position:absolute;
+      top: 5px;
+      right: 5px;
+      }
+
+
+
+
+
+//

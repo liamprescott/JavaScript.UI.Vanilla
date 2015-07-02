@@ -1,31 +1,29 @@
-
-/*
- This is a test comment over more
- than one line
- */
-
+/**
+  --------------------------------------------------------------
+  $ UI Accordion
+  @description Basic styling for an example Accordion
+  --------------------------------------------------------------
+  */
 
 // Local Variables
 $border-color: #999;
 
 
 // Styles
-.js-acc
-{
+.acc {
   border-top:1px solid $border-color;
   }
 
-  .js-acc__item{
+  .acc__item {
     border-bottom:1px solid $border-color;
   }
 
-    .js-acc__link,
-    .js-acc__body{
+    .acc__link,
+    .acc__body {
       font-family: sans-serif;
     }
 
-    .js-acc__link {
-
+    .acc__link {
       text-transform: uppercase;
       padding:1em;
 
@@ -70,17 +68,15 @@ $border-color: #999;
       }
     }
 
-    .js-acc__body {
+    .acc__body {
 
       max-height:0;
       overflow:hidden;
-      padding:
-      {
+      padding: {
         left:1em;
         right:1em;
       }
-      transition:
-      {
+      transition: {
         property: max-height;
         duration: 0.2s;
         //timing-function: ease;
@@ -89,9 +85,8 @@ $border-color: #999;
 
 
     // Open close display logic
-    .acc__item--is-open > .js-acc__body
+    .acc__item--is-open > .acc__body
     {
       padding-bottom: 1em;
-
       max-height:300px;
     }
