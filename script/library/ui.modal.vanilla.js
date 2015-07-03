@@ -1,4 +1,3 @@
-
 // Declare global js
 if (!this.js) { this.js = {}; }
 

@@ -1,5 +1,3 @@
-
-
 // Declare global js object
 if (!this.js) { this.js = {}; }
 
@@ -169,7 +167,9 @@ if (!this.js) { this.js = {}; }
 
 
 /*
+ ----------------------------------------------------------------
  * Initialisation example
+  ----------------------------------------------------------------
  */
 document.addEventListener('DOMContentLoaded', function()
 {
