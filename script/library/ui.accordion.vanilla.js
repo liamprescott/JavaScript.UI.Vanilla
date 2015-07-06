@@ -152,10 +152,8 @@ if (!this.js) { this.js = {}; }
       // Create return object
       var that = {};
 
-
       // Run initialisation
       init();
-
 
       // Return object
       return that;

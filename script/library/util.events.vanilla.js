@@ -33,12 +33,12 @@ if (!this.js) { this.js = {}; }
        * @description Configure pointer event names for older versions of IE
        */
       var configurePointerEvents = function () {
-				if (!window.PointerEvent) {
-					event_pointer_down = event_ms_pointer_down;
-					event_pointer_up = event_ms_pointer_up;
-				}
+        if (!window.PointerEvent) {
+          event_pointer_down = event_ms_pointer_down;
+          event_pointer_up = event_ms_pointer_up;
+        }
         pointerEventsConfigured = true; // Set state flag
-			};
+      };
 
       /**
        @description Public Add click method
