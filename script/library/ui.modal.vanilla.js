@@ -69,9 +69,8 @@ if (!this.js) { this.js = {}; }
       var l = data.triggers.length,
           i;
       // Assign click handler to links
-      for (i=0; i<l; i++)
-      {
-        // Don't need a closure as don't need to capture i!
+      for (i=0; i<l; i++) {
+        // Don't need a closure as don't need to capture value of i!
         eventUtil.addClick({
           target: data.triggers[i],
           addClickListener: true,
@@ -115,8 +114,7 @@ var props_modal = {
 };
 
 if (document.addEventListener) {
-  document.addEventListener('DOMContentLoaded', function ()
-  {
+  document.addEventListener('DOMContentLoaded', function () {
     var modal = js.modal(props_modal);
   });
 }

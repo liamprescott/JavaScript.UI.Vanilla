@@ -29,16 +29,15 @@ if (!this.js) { this.js = {}; }
                 a,
                 b = itemLinks.length;
                 for (a=0; a<b; a++) {
-                eventUtil.addClick(
-                  {
-                    target: itemLinks[a],
-                    addClickListener: true,
-                    startHandler: null,
-                    startArguments: null,
-                    endHandler: handleChangeState,
-                    endArguments: [data, item, i]
-                  });
-                }
+                eventUtil.addClick({
+                  target: itemLinks[a],
+                  addClickListener: true,
+                  startHandler: null,
+                  startArguments: null,
+                  endHandler: handleChangeState,
+                  endArguments: [data, item, i]
+                });
+            }
           })(i);
         }
 
@@ -171,8 +170,6 @@ if (!this.js) { this.js = {}; }
  */
 document.addEventListener('DOMContentLoaded', function()
 {
-  console.log('hello');
-
   var accordion = js.accordion({
       name : 'Accordion Example 1', //
       module : document.querySelector('.js-example-acc'), // Module target

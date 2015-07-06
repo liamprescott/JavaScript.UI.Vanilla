@@ -148,9 +148,9 @@ if (!this.js) { this.js = {}; }
           return data;
         };
 
-				data.target.addEventListener(event_touch_start, handleStart, false);
-				data.target.addEventListener(event_pointer_down, handleStart, false);
-				if (data.addClickListener) { data.target.addEventListener(event_click, handleClick, false); }
+        data.target.addEventListener(event_touch_start, handleStart, false);
+        data.target.addEventListener(event_pointer_down, handleStart, false);
+        if (data.addClickListener) { data.target.addEventListener(event_click, handleClick, false); }
 
         // Return remove click utility method
         return removeClick;

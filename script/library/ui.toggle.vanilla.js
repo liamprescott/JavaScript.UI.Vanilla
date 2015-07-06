@@ -50,12 +50,10 @@ if(!this.js) { this.js = {}; }
  */
  document.addEventListener('DOMContentLoaded', function ()
  {
-   console.log("hello toggle");
-
-   var toggle = js.toggle({
-     name: "Simple toggle example",
-     trigger:document.querySelector(".js-toggle-trigger"),
-     target:document.querySelector(".js-toggle-target"),
-     cssClassToggle:"is-open",
-   });
+  var toggle = js.toggle({
+    name: "Simple toggle example",
+    trigger:document.querySelector(".js-toggle-trigger"),
+    target:document.querySelector(".js-toggle-target"),
+    cssClassToggle:"is-open"
+  });
  });
