@@ -34,8 +34,7 @@
     "css:prefix": "postcss --use autoprefixer -c postcss-options.json -o style/css/main.css style/css/main.css",
     "build:css": "npm run compile:css:dev && npm run css:prefix",
     "livereload": "live-reload style/css --port 9091 --delay 1s",
-    "browsersync": "browser-sync start --files \"style/css/*.css\" --proxy local.JavaScript.UI.Vanilla",
     "watch:sass": "nodemon -e scss -w style/scss -x \"npm run build:css\"",
-    "dev": "parallelshell \"npm run browsersync\" \"npm run watch:sass\""
+    "dev": "parallelshell \"npm run livereload\" \"npm run watch:sass\""
   }
 }

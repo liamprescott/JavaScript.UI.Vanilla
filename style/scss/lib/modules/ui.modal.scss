@@ -9,15 +9,18 @@
 
  // Styles
 
+  p { color:#ff00ff; }
+
  // Trigger links
    .modal-trigger
    {
     font-size:20px;
     text-decoration:underline;
 
+    /*
         color:#ff00ff;
         font-family:serif;
-
+*/
     &:hover{
       background-color:#ffff00;
     }

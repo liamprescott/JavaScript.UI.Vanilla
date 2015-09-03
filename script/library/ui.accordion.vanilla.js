@@ -24,12 +24,12 @@ if (!this.js) { this.js = {}; }
         for (i=0; i<l; i++) {
           var item = items[i]; // HTMLElement
           // Closure call to capture value of i for event handler
-          (function(index){
+          (function(index) {
             var itemLinks = links[i] = item.querySelectorAll(qsTrigger),
                 a,
                 b = itemLinks.length;
-                for (a=0; a<b; a++) {
-                eventUtil.addClick({
+            for (a = 0; a < b; a++){
+              eventUtil.addClick({
                   target: itemLinks[a],
                   addClickListener: true,
                   startHandler: null,
