@@ -7,6 +7,8 @@
 *,
 :before,
 :after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -44,37 +46,15 @@ body {
 }
 
 .acc__link:hover {
-  -webkit-animation-name: linkhover;
-          animation-name: linkhover;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
+  animation-name: linkhover;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
 }
 
 /*
      * This is another test comment over more
      * than one line with slightly different format
      */
-@-webkit-keyframes linkhover
-{
-  0% {
-    background-color: #fff;
-    color: #000;
-  }
-  45% {
-    background-color: #ff00ff;
-    color: #fff;
-  }
-  55% {
-    background-color: #ff00ff;
-    color: #fff;
-  }
-  100% {
-    background-color: #fff;
-    color: #000;
-  }
-}
 @keyframes linkhover
 {
   0% {
@@ -100,10 +80,8 @@ body {
   overflow: hidden;
   padding-left: 1em;
   padding-right: 1em;
-  -webkit-transition-property: max-height;
-          transition-property: max-height;
-  -webkit-transition-duration: 0.2s;
-          transition-duration: 0.2s;
+  transition-property: max-height;
+  transition-duration: 0.2s;
 }
 
 .acc__item--is-open > .acc__body {
@@ -117,10 +95,6 @@ body {
   @description Basic styling for an example Modal window
   --------------------------------------------------------------
   */
-p {
-  color: #ff00ff;
-}
-
 .modal-trigger {
   font-size: 20px;
   text-decoration: underline;
@@ -174,4 +148,5 @@ p {
   top: 5px;
   right: 5px;
 }
+
 /*# sourceMappingURL=main.css.map */
